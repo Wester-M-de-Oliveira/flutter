@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'detailsSpain.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -106,6 +107,20 @@ class Home extends StatelessWidget {
                 child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DetailsSpainApp())
+                      );
+                    },
+                    child:DestinationCard(
+                      assetImage: 'assets/images/espanha.png',
+                      title: 'Espanha',
+                      location: 'Madrid, Espanha',
+                      rating: 4.7,
+                    ),
+                  ),
                   DestinationCard(
                     assetImage: 'assets/images/espanha.png',
                     title: 'Espanha',
