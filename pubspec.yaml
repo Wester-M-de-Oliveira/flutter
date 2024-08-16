@@ -71,6 +71,7 @@ flutter:
     - assets/images/perfil.png
     - assets/images/espanha.png
     - assets/images/france.png
+    - assets/images/espanhadetalhes.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

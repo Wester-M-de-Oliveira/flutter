@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'detailsSpain.dart';
+import 'lugaresPopulares.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -80,7 +81,7 @@ class Home extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 35),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
@@ -92,11 +93,16 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
-                    'Ver tudo',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.blue,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DetailsSpainApp())
+                      );
+                    },
+                    child: const Text(
+                      'Ver tudo',
+                      style: TextStyle(color: Colors.blue),
                     ),
                   ),
                 ],

@@ -1,100 +1,188 @@
 import 'package:flutter/material.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'home.dart';
 
-class DetailsSpainApp extends StatefulWidget {
-  @override
-  _DetailsSpainAppState createState() => _DetailsSpainAppState();
-}
-
-class _DetailsSpainAppState extends State<DetailsSpainApp> {
-  final _pageController = PageController();
-  double _currentPageIndex = 0;
-
+class DetailsSpainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
-          Stack(
-            children: [
-              Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
-                  ),
-                  child: Image.asset(
-                    'assets/images/pageview2.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 10,
-                right: 10,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                    );
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(0)),
-                      side: BorderSide(color: Colors.transparent),
-                    ),
-                  ),
-                  child: const Text('Skip',   style: TextStyle(color: Colors.white),),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 25),
-          const Center(child: Text('É um mundo grande lá', style: TextStyle(fontSize: 30))),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: [
-              Text('fora, vá ', style: TextStyle(fontSize: 30)),
-              Column(
-                children: [
-                  Text('explorar', style: TextStyle(fontSize: 30,color: Color(0xFFFF7029))),
-                  Container(
-                    child: Image.asset(
-                      'assets/images/explorar.png',
+          Expanded(
+            child: Stack(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.55,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/espanhadetalhes.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                ],
-              )
-            ],
-          ),
-          const SizedBox(height: 8),
-          const Center(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(40,0,40 ,0),
-              child: Text(
-                'Para aproveitar ao máximo sua aventura você só precisa sair e ir para onde quiser. estamos esperando por você',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.grey,
-                  height: 1.9, // Aumenta o espaçamento entre as linhas
                 ),
-              ),
+                Positioned(
+                  top: 40,
+                  left: 16,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
+                    },
+                  ),
+                ),
+                const Positioned(
+                  top: 40,
+                  right: 16,
+                  child: Icon(Icons.bookmark_border, color: Colors.white),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.55,
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(24.0)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Título e avatar
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Espanha',
+                                  style: TextStyle(
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 4.0),
+                                Text(
+                                  'Madrid, Espanha',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            CircleAvatar(
+                              backgroundImage: AssetImage('assets/images/perfil.png'),
+                              radius: 24.0,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 25),
+                        // Localização, Avaliação e Preço
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.location_on, color: Colors.grey),
+                                SizedBox(width: 4.0),
+                                Text('Madrid'),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.star, color: Colors.amber),
+                                SizedBox(width: 4.0),
+                                Text('4.7 (2498)'),
+                              ],
+                            ),
+                            Text(
+                              '\$6459/pessoa',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 25),
+                        // Imagens de exemplo
+                        SizedBox(
+                          height: 60.0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              exampleImage('assets/images/perfil.png'),
+                              exampleImage('assets/images/perfil.png'),
+                              exampleImage('assets/images/perfil.png'),
+                              exampleImage('assets/images/perfil.png'),
+                              exampleImage('assets/images/perfil.png'),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 30),
+                        // Sobre o Destino
+                        const Text(
+                          'About Destination',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 8.0),
+                        const Text(
+                          'Madri, a capital da Espanha, situada no centro do país, é uma cidade de avenidas elegantes e parques grandes e bem cuidados, como o Buen Retiro.',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            height: 1.9
+                            ),
+                        ),
+                        const Spacer(), // Empurra o botão para o fundo
+                        // Botão Agende Agora
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Ação do botão
+                            },
+                            style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(vertical: 16.0),
+                              backgroundColor: Colors.blue,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                            child: const Text(
+                              'Agende agora',
+                              style: TextStyle(fontSize: 16.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+
+              ],
             ),
-          )
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget exampleImage(String asset) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Image.asset(
+          asset,
+          width: 60.0,
+          height: 60.0,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
