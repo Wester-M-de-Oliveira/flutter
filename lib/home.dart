@@ -2,6 +2,49 @@ import 'package:flutter/material.dart';
 import 'detailsSpain.dart';
 import 'lugaresPopulares.dart';
 
+class MainScreen extends StatefulWidget {
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _currentIndex = 1; // Define o índice inicial como 1 para a home
+
+  final List<Widget> _pages = [
+    DetailsSpainApp(),
+    Home(),
+    Home(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Messages',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Perfil',
+          ),
+        ],
+      ),
+    );
+  }
+}
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -97,7 +140,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DetailsSpainApp())
+                        MaterialPageRoute(builder: (context) => PopularPlacesScreen())
                       );
                     },
                     child: const Text(
@@ -145,23 +188,6 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'Messages',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-          ),
-        ],
-      ),
     );
   }
 }

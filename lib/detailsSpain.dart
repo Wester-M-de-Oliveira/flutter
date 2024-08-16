@@ -27,7 +27,7 @@ class DetailsSpainApp extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(builder: (context) => MainScreen()),
                       );
                     },
                   ),

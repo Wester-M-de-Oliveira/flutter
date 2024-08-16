@@ -49,7 +49,7 @@ class _PageViewAppState extends State<PageViewApp> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              MaterialPageRoute(builder: (context) => MainScreen()),
                             );
                           },
                           style: TextButton.styleFrom(
@@ -131,7 +131,7 @@ class _PageViewAppState extends State<PageViewApp> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              MaterialPageRoute(builder: (context) => MainScreen()),
                             );
                           },
                           style: TextButton.styleFrom(
@@ -213,7 +213,7 @@ class _PageViewAppState extends State<PageViewApp> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              MaterialPageRoute(builder: (context) => MainScreen()),
                             );
                           },
                           style: TextButton.styleFrom(
@@ -307,7 +307,7 @@ class _PageViewAppState extends State<PageViewApp> {
                       onPressed: () {
                         _currentPageIndex < 2 ? _pageController.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.ease) : Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()),
+                          MaterialPageRoute(builder: (context) => MainScreen()),
                         );
                       },
                       style: ButtonStyle(
