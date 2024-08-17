@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'detailsSpain.dart';
 import 'lugaresPopulares.dart';
+import 'message.dart';
+import 'perfil.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -11,9 +13,9 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 1; // Define o índice inicial como 1 para a home
 
   final List<Widget> _pages = [
-    DetailsSpainApp(),
+    MessagesPage(),
     Home(),
-    Home(),
+    ProfilePage(),
   ];
 
   @override
@@ -169,12 +171,6 @@ class Home extends StatelessWidget {
                       location: 'Madrid, Espanha',
                       rating: 4.7,
                     ),
-                  ),
-                  DestinationCard(
-                    assetImage: 'assets/images/espanha.png',
-                    title: 'Espanha',
-                    location: 'Madrid, Espanha',
-                    rating: 4.7,
                   ),
                   DestinationCard(
                     assetImage: 'assets/images/france.png',
