@@ -94,7 +94,7 @@ class _PageViewAppState extends State<PageViewApp> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          height: 1.9, // Aumenta o espaçamento entre as linhas
+                          height: 1.9,
                         ),
                       ),
                     ),
@@ -176,7 +176,7 @@ class _PageViewAppState extends State<PageViewApp> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          height: 1.9, // Aumenta o espaçamento entre as linhas
+                          height: 1.9,
                         ),
                       ),
                     ),
@@ -264,7 +264,7 @@ class _PageViewAppState extends State<PageViewApp> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          height: 1.9, // Aumenta o espaçamento entre as linhas
+                          height: 1.9,
                         ),
                       ),
                     ),
@@ -300,7 +300,7 @@ class _PageViewAppState extends State<PageViewApp> {
                       spacing: const EdgeInsets.all(4.0),
                     ),
                   ),
-                  SizedBox(height: 15), // Espaço entre os dots e o botão
+                  SizedBox(height: 15),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: ElevatedButton(

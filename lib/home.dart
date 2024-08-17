@@ -10,7 +10,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 1; // Define o índice inicial como 1 para a home
+  int _currentIndex = 1;
 
   final List<Widget> _pages = [
     MessagesPage(),
@@ -81,20 +81,18 @@ class Home extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(right: 16),
             decoration: BoxDecoration(
-              color: Colors.grey[200], // Define a cor de fundo cinza
-              shape: BoxShape.circle, // Define a forma circular
+              color: Colors.grey[200],
+              shape: BoxShape.circle,
             ),
             child: IconButton(
               icon: const Icon(Icons.notifications_outlined, color: Colors.black),
               onPressed: () {
-                // Ação do ícone de notificação
               },
             ),
           )
         ],
       ),
       body: Padding(
-        // padding: const EdgeInsets.symmetric(horizontal: 16.0),
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,7 +246,7 @@ class DestinationCard extends StatelessWidget {
                   const Icon(Icons.star, color: Color.fromARGB(255, 255, 230, 0), size: 16),
                   const SizedBox(width: 4),
                   Text(
-                    '$rating', // Quantidade de estrelas
+                    '$rating',
                     style: const TextStyle(
                       fontSize: 16,
                     ),

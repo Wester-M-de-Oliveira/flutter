@@ -8,7 +8,7 @@ class ProfilePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0), // Adiciona padding no eixo x
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -28,8 +28,8 @@ class ProfilePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Container(
-                  width: 40, // Define a largura do círculo
-                  height: 40, // Define a altura do círculo (igual à largura para ser circular)
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     shape: BoxShape.circle,
@@ -37,7 +37,6 @@ class ProfilePage extends StatelessWidget {
                   child: IconButton(
                     icon: Icon(Icons.edit, color: Colors.black),
                     onPressed: () {
-                      // Ação do botão de edição
                     },
                   ),
                 ),
@@ -75,9 +74,9 @@ class ProfilePage extends StatelessWidget {
               children: [
                 _buildStatisticItem('Recompensa', '360'),
                 Container(
-                  height: 50, // Altura da linha, você pode ajustar conforme necessário
-                  width: 1,   // Largura da linha
-                  color: Colors.grey[300], // Cor da linha
+                  height: 50,
+                  width: 1,
+                  color: Colors.grey[300],
                 ),
                 _buildStatisticItem('Viagens', '238'),
                 Container(
@@ -139,7 +138,6 @@ class ProfilePage extends StatelessWidget {
       ),
       trailing: Icon(Icons.arrow_forward_ios, color: Colors.black),
       onTap: () {
-        // Ação ao clicar na opção
       },
     );
   }

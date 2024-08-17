@@ -49,7 +49,6 @@ class DetailsSpainApp extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Título e avatar
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -79,7 +78,6 @@ class DetailsSpainApp extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 25),
-                        // Localização, Avaliação e Preço
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -107,7 +105,6 @@ class DetailsSpainApp extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 25),
-                        // Imagens de exemplo
                         SizedBox(
                           height: 60.0,
                           child: Row(
@@ -122,7 +119,6 @@ class DetailsSpainApp extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 30),
-                        // Sobre o Destino
                         const Text(
                           'About Destination',
                           style: TextStyle(
@@ -138,13 +134,11 @@ class DetailsSpainApp extends StatelessWidget {
                             height: 1.9
                             ),
                         ),
-                        const Spacer(), // Empurra o botão para o fundo
-                        // Botão Agende Agora
+                        const Spacer(),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Ação do botão
                             },
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -155,7 +149,10 @@ class DetailsSpainApp extends StatelessWidget {
                             ),
                             child: const Text(
                               'Agende agora',
-                              style: TextStyle(fontSize: 16.0),
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.white
+                              ),
                             ),
                           ),
                         ),

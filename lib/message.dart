@@ -8,7 +8,7 @@ class MessagesPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0), // Adiciona padding no eixo x
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -28,8 +28,8 @@ class MessagesPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Container(
-                  width: 40, // Define a largura do círculo
-                  height: 40, // Define a altura do círculo (igual à largura para ser circular)
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     shape: BoxShape.circle,
@@ -37,7 +37,6 @@ class MessagesPage extends StatelessWidget {
                   child: IconButton(
                     icon: Icon(Icons.edit, color: Colors.black),
                     onPressed: () {
-                      // Ação do botão de edição
                     },
                   ),
                 ),
